@@ -1,5 +1,6 @@
 import Register from '../pages/Register';
 import Login from '../pages/Login';
+import Otp from '../pages/Otp';
 
 const Routes = [
   {
@@ -11,6 +12,11 @@ const Routes = [
     name: 'Login',
     path: '/auth/login',
     component: Login,
+  },
+  {
+    name: 'Otp',
+    path: '/auth/otp',
+    component: Otp,
   }
 ]
 

@@ -61,7 +61,9 @@ const Register = () => {
                 <div className="form-group">
                   <input className="form-control" onChange={(e) => setCountry(e.target.value)} type="text" placeholder="Country" />
                 </div>
-                <Button text="Register" />
+                <Link to="/auth/otp">
+                  <Button text="Register" />
+                </Link>
                 <div className="mt-3">
                   <span>Already on Pretest? <Link to={'/auth/login'} className="auth-link"
                     href="login.html">Login</Link></span><br />
