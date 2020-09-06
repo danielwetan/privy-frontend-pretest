@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '../components/Public/Button';
+import Button from '../components/Button';
 import '../App.css';
 // import axios from 'axios';
 import { Link } from 'react-router-dom';

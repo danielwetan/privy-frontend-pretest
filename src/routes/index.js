@@ -2,6 +2,7 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Otp from '../pages/Otp';
 import Profile from '../pages/Profile';
+import PageNotFound from '../pages/PageNotFound';
 
 const Routes = [
   {
@@ -23,6 +24,11 @@ const Routes = [
     name: 'Profile',
     path: '/profile',
     component: Profile,
+  },
+  {
+    name: 'PageNotFound',
+    path: '*',
+    component: PageNotFound,
   }
 ]
 
