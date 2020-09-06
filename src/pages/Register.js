@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../components/Public/Button';
 import '../App.css';
+import { Link } from 'react-router-dom';
 // import axios from 'axios';
 
 const Register = () => {
@@ -62,8 +63,8 @@ const Register = () => {
                 </div>
                 <Button text="Register" />
                 <div className="mt-3">
-                  <span>Already on Pretest? <a className="auth-link"
-                    href="login.html">Login</a></span><br />
+                  <span>Already on Pretest? <Link to={'/auth/login'} className="auth-link"
+                    href="login.html">Login</Link></span><br />
                 </div>
               </form>
             </div>

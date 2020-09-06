@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '../components/Public/Button';
 import '../App.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -50,8 +51,8 @@ const Login = () => {
                 </div>
                 <Button text="Login" />
                 <div className="mt-3">
-                  <span>New to Pretest? <a className="auth-link"
-                    href="login.html">Register</a></span><br />
+                  <span>Already on Pretest? <Link to={'/auth/register'} className="auth-link"
+                    href="login.html">Register</Link></span><br />
                 </div>
               </form>
             </div>
