@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import BlueBtn from '../components/Button';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input } from 'reactstrap';
 import backgroundImg from '../assets/images/background.png';
 import profileImg from '../assets/images/profile.jpg';
 import { Link } from 'react-router-dom';

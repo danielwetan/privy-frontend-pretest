@@ -12,8 +12,5 @@ Privy Frontend Pretest
     `npm start`
     
 ## Built with
-- [React](https://reactjs.org/)
+- [React.js](https://reactjs.org/)
 - [Bootstrap](https://getbootstrap.com)
-
-## Author
-- [Daniel Saputra](https://www.linkedin.com/in/danielwetan/)
