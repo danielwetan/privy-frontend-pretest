@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../components/Public/Button';
 import '../App.css';
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
@@ -49,7 +49,9 @@ const Login = () => {
                 <div className="form-group">
                   <input className="form-control" onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
                 </div>
-                <Button text="Login" />
+                <Link to="/profile">
+                  <Button text="Login" />
+                </Link>
                 <div className="mt-3">
                   <span>Already on Pretest? <Link to={'/auth/register'} className="auth-link"
                     href="login.html">Register</Link></span><br />
