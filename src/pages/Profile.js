@@ -1,11 +1,32 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import BlueBtn from '../components/Button';
 import backgroundImg from '../assets/images/background.png';
 import profileImg from '../assets/images/profile.jpg';
-
 import { Link } from 'react-router-dom';
 
 const Profile = () => {
+  const [name, setName] = useState("Daniel Saputra");
+  const [gender, setGender] = useState("Male");
+  const [birthday, setBirthday] = useState("2001-09-27");
+  const [hometown, setHometown] = useState("Indonesia");
+  const [bio, setBio] = useState("A person who passionate about learning, likes to collaborate, interested in logic and problem solving.");
+
+  const [companyName, setCompanyName] = useState("Mediacipta");
+  const [startingFrom, setStartingFrom] = useState("2020-08-14");
+  const [endingIn, setEndingIn] = useState("2020-08-14");
+
+  const [schoolName, setSchoolName] = useState("Arkademy");
+  const [graduationTime, setGradiationTime] = useState("2020-08-14");
+
+  const [generalInfo, setGeneralInfo] = useState(false);
+  const [education, setEducation] = useState(false)
+  const [workExperience, setWorkExperience] = useState(false);
+  const toggleGeneralInfo = () => setGeneralInfo(!generalInfo);
+  const toggleEducation = () => setEducation(!education);
+  const toggleWorkExperience = () => setWorkExperience(!workExperience);
+
+
   return (
     <>
       <div class="container d-flex justify-content-center mt-3 mb-3">
@@ -25,10 +46,12 @@ const Profile = () => {
                   alt="profile" />
                 <div class="row">
                   <div class="col-11">
-                    <p class="profile-name mt-2" style={{ fontSize: "20px", fontWeight: "600" }}>Daniel Saputra</p>
+                    <p class="profile-name mt-2" style={{ fontSize: "20px", fontWeight: "600" }}>{name}</p>
                   </div>
                   <div class="col-1 d-none d-sm-block">
-                    <span style={{ fontSize: "13px" }}><i class="fas fa-pencil-alt"></i></span>
+                    <Link to="#">
+                      <span onClick={toggleGeneralInfo} style={{ fontSize: "13px" }}><i class="fas fa-pencil-alt"></i></span>
+                    </Link>
                   </div>
                 </div>
 
@@ -36,7 +59,7 @@ const Profile = () => {
                   <div class="col-6" style={{ minHeight: "100px" }}>
                     <h6><b>About</b></h6>
                     <span style={{ fontSize: "15px" }}>
-                      A person who passionate about learning, likes to collaborate, interested in logic and problem solving.
+                      {bio}
                     </span>
                   </div>
                   <div class="col-6" style={{ minHeight: "100px" }}>
@@ -56,11 +79,11 @@ const Profile = () => {
                         <div class="col-md-7 col-sm-12">
                           <span style={{ fontSize: "15px", color: "#797a7e" }}>18 y.o</span>
                           <br></br>
-                          <span style={{ fontSize: "15px", color: "#797a7e" }}>2001-09-27</span>
+                          <span style={{ fontSize: "15px", color: "#797a7e" }}>{birthday}</span>
                           <br></br>
-                          <span style={{ fontSize: "15px", color: "#797a7e" }}>Male</span>
+                          <span style={{ fontSize: "15px", color: "#797a7e" }}>{gender}</span>
                           <br></br>
-                          <span style={{ fontSize: "15px", color: "#797a7e" }}>Cilacap</span>
+                          <span style={{ fontSize: "15px", color: "#797a7e" }}>{hometown}</span>
                         </div>
                       </div>
                     </div>
@@ -74,9 +97,11 @@ const Profile = () => {
                         <h6><b>Education</b></h6>
                       </div>
                       <div class="col-1 d-none d-sm-block">
-                        <span style={{ fontSize: "13px" }}><i class="fas fa-pencil-alt"></i></span>
+                        <Link to="#">
+                          <span onClick={toggleEducation} style={{ fontSize: "13px" }}><i class="fas fa-pencil-alt"></i></span>
+                        </Link>
                       </div>
-                    </div> <span style={{ fontSize: "15px", fontWeight: "bold" }}>Arkademy</span>
+                    </div> <span style={{ fontSize: "15px", fontWeight: "bold" }}>{schoolName}</span>
                     <br></br>
                     <div class="row">
                       <div class="col-md-5 col-sm-12">
@@ -84,7 +109,7 @@ const Profile = () => {
                         <br></br>
                       </div>
                       <div class="col-md-7 col-sm-12">
-                        <span style={{ fontSize: "15px", color: "#797a7e" }}>2020-08-14</span>
+                        <span style={{ fontSize: "15px", color: "#797a7e" }}>{graduationTime}</span>
                         <br></br>
                       </div>
                     </div>
@@ -95,11 +120,13 @@ const Profile = () => {
                         <h6><b>Work Experience</b></h6>
                       </div>
                       <div class="col-1 d-none d-sm-block">
-                        <span style={{ fontSize: "13px" }}><i class="fas fa-pencil-alt"></i></span>
+                        <Link to="#">
+                          <span onClick={toggleWorkExperience} style={{ fontSize: "13px" }}><i class="fas fa-pencil-alt"></i></span>
+                        </Link>
                       </div>
                     </div>
 
-                    <span style={{ fontSize: "15px", fontWeight: "bold" }}>Mediacipta</span>
+                    <span style={{ fontSize: "15px", fontWeight: "bold" }}>{companyName}</span>
                     <br></br>
                     <div class="row">
                       <div class="col-md-5 col-sm-12">
@@ -109,9 +136,9 @@ const Profile = () => {
                         <br></br>
                       </div>
                       <div class="col-md-7 col-sm-12">
-                        <span style={{ fontSize: "15px", color: "#797a7e" }}>2020-08-14</span>
+                        <span style={{ fontSize: "15px", color: "#797a7e" }}>{startingFrom}</span>
                         <br></br>
-                        <span style={{ fontSize: "15px", color: "#797a7e" }}>2020-08-14</span>
+                        <span style={{ fontSize: "15px", color: "#797a7e" }}>{endingIn}</span>
                         <br></br>
                       </div>
                     </div>
@@ -123,9 +150,6 @@ const Profile = () => {
                     <div class="row">
                       <div class="col-9">
                         <h6><b>Messages</b></h6>
-                      </div>
-                      <div class="col-3 d-none d-sm-block">
-                        <span style={{ fontSize: "13px" }}>Get message</span>
                       </div>
                     </div>
 
@@ -155,6 +179,68 @@ const Profile = () => {
           </div>
         </div>
 
+        <Modal isOpen={generalInfo} toggle={toggleGeneralInfo}>
+          <ModalHeader toggle={toggleGeneralInfo}>Update General Info</ModalHeader>
+          <ModalBody>
+            <Form onSubmit={console.log("TESTING HERE!")}>
+              <FormGroup>
+                <Input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
+              </FormGroup>
+              <FormGroup>
+                <Input type="text" placeholder="Gender" onChange={(e) => setGender(e.target.value)} />
+              </FormGroup>
+              <FormGroup>
+                <Input type="text" placeholder="Birthday" onChange={(e) => setBirthday(e.target.value)} />
+              </FormGroup>
+              <FormGroup>
+                <Input type="text" placeholder="Hometown" onChange={(e) => setHometown(e.target.value)} />
+              </FormGroup>
+              <FormGroup>
+                <Input type="textarea" placeholder="Bio" onChange={(e) => setBio(e.target.value)} />
+              </FormGroup>
+            </Form>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={toggleGeneralInfo} type="submit">Update</Button>
+          </ModalFooter>
+        </Modal>
+
+        <Modal isOpen={education} toggle={toggleEducation}>
+          <ModalHeader toggle={toggleEducation}>Update Education</ModalHeader>
+          <ModalBody>
+            <Form>
+              <FormGroup>
+                <Input type="text" placeholder="School name" onChange={(e) => setSchoolName(e.target.value)} />
+              </FormGroup>
+              <FormGroup>
+                <Input type="text" placeholder="Graduation time" onChange={(e) => setGradiationTime(e.target.value)} />
+              </FormGroup>
+            </Form>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" type="submit" onClick={toggleEducation}>Update</Button>
+          </ModalFooter>
+        </Modal>
+
+        <Modal isOpen={workExperience} toggle={toggleWorkExperience}>
+          <ModalHeader toggle={toggleWorkExperience}>Update Work Experience</ModalHeader>
+          <ModalBody>
+            <Form>
+              <FormGroup>
+                <Input type="text" placeholder="Company Name" onChange={(e) => setCompanyName(e.target.value)} />
+              </FormGroup>
+              <FormGroup>
+                <Input type="text" placeholder="Starting from" onChange={(e) => setStartingFrom(e.target.value)} />
+              </FormGroup>
+              <FormGroup>
+                <Input type="text" placeholder="Ending in" onChange={(e) => setEndingIn(e.target.value)} />
+              </FormGroup>
+            </Form>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={toggleWorkExperience}>Update</Button>
+          </ModalFooter>
+        </Modal>
 
       </div>
     </>

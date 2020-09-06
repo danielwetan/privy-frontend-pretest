@@ -1,8 +1,6 @@
 import React from 'react';
 import '../App.css';
-// import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Button from '../components/Button';
 
 import image from '../assets/images/hiring2.svg';
 
@@ -30,7 +28,7 @@ const PageNotFound = () => {
                     <Link to="/auth/otp">
                       <li>OTP</li>
                     </Link>
-                    <Link to="/auth/login">
+                    <Link to="/profile">
                       <li>Profile</li>
                     </Link>
                   </ul>
@@ -42,7 +40,6 @@ const PageNotFound = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div >
   )
